@@ -1,0 +1,31 @@
+def path_calc(node, units, path_dir):
+    path = [node]
+    for i in xrange(abs(units))
+     if path_dir: node += (units/abs(units))
+     else: node += (7*(units/abs(units)))
+     path.append(node)
+    return path
+
+     
+def path_finder(cn, dn):
+    obstacle = 0
+    node = cn;
+    cnx, cny = (cn % 7), (cn / 7)
+    dnx, dny = (dn % 7), (dn / 7)
+    x, y = (dnx - cnx),(dny - cny)
+    path = path_calc(node, y, 0)
+    path = path_calc(path[-1],x, 1)
+    print path
+    for i in path:
+        if i in tree_nodes:
+          path = []
+          obstacle = 1
+          break
+    if obstacle :
+        path = path_calc(node, x, 1)
+        path = path_calc(path[-1],y, 0)
+        for i in path:
+          if i in tree_nodes:
+            path = []
+            obstacle = 1
+            break
